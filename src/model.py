@@ -38,7 +38,7 @@ def read_video(path: str):
 class VAD:
     def __init__(self, model_id):
         self.model_id = model_id
-        self.model = VAD_MODELS[model_id][0]
+        self.model = VAD_MODELS[model_id]
 
     def get_speech_timestamps(self, audio: torch.Tensor, model, sampling_rate: int = 16000,
                               min_speech_duration_ms: int = 250, min_silence_duration_ms: int = 100,

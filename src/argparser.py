@@ -8,7 +8,7 @@ def parse_arguments():
     parser.add_argument('--multimodal', default=False, type=bool, help='the data is a multimedia file')
     parser.add_argument('--cuda', default=0, type=int, help='use a cuda specific device or pass -1 to use cpu instead')
     parser.add_argument('--seed', default=1, type=int, help='random seed')
-    parser.add_argument('--data-path', default='../data/gam_08421_00349882273.wav', type=str, help='path to train/dev/test datasets')
+    parser.add_argument('--data-path', default='../data/gl_test.wav', type=str, help='path to train/dev/test datasets')
     parser.add_argument('--save-path', default='/log/', type=str, help='model and log save directory')
     parser.add_argument('--pipe-line', default='default', type=str, help='pipe-line selected for the run')
 
