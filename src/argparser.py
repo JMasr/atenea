@@ -4,7 +4,7 @@ import argparse
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Arguments for the automatic rich-transcription run')
     # General arguments about the experiment (id, type of media, gpu-cpu, seed, useful directories, pipe-line)
-    parser.add_argument('--name', default='test-00', type=str, help='name of run')
+    parser.add_argument('--name', default='gl_test', type=str, help='name of run')
     parser.add_argument('--multimodal', default=False, type=bool, help='the data is a multimedia file')
     parser.add_argument('--cuda', default=0, type=int, help='use a cuda specific device or pass -1 to use cpu instead')
     parser.add_argument('--seed', default=1, type=int, help='random seed')

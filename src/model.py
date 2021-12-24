@@ -220,14 +220,30 @@ class VAD:
 
 class RichTranscription:
     def __init__(self, arguments):
+        self.arguments = arguments
+        self.name = arguments.name
         self.id = uuid.uuid4()
-        self.origin_name = arguments.name
-        self.language = arguments.language
-        self.multimodal = arguments.multimodal
 
+
+
+        self.speech_timestamps = []
         self.wav, self.sampling_rate = read_audio(arguments.data_path)
+
         self.stm = []
         self.srt = []
 
-        self.vad = VAD(arguments.vad_model)
-        self.speech_timestamps = self.vad.apply_4_mem(self.wav, self.sampling_rate)
+    def apply_vad(self):
+        vad = VAD(self.arguments.vad_model)
+        self.speech_timestamps = vad.apply_4_mem(self.wav, self.sampling_rate)
+        return self.speech_timestamps
+
+    def save_speech_segments(self, output_path=''):
+        if output_path == '':
+            output_path = "/".join(self.arguments.data_path.split('/')[:-1])
+
+        output_path += '/vad/'
+        os.makedirs(output_path, exist_ok=True)
+        for ind, w in enumerate(self.speech_timestamps):
+            tinit = round(w['start'] * 1000 / self.sampling_rate)
+            tend = round(w['end'] * 1000 / self.sampling_rate)
+            save_audio(output_path + f'{self.name}_vad_{tinit}-{tend}.wav', w['data'], sampling_rate=self.sampling_rate)
