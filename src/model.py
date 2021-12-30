@@ -3,6 +3,8 @@ import os
 import torch
 import torchaudio
 
+import subprocess
+
 import re
 import uuid
 import warnings
@@ -11,20 +13,19 @@ from config import VAD_MODELS
 
 
 def read_audio(path: str, sampling_rate: int = 16000):
+    wav, sr = torchaudio.load(path)
 
-        wav, sr = torchaudio.load(path)
+    if wav.size(0) > 1:
+        wav = wav.mean(dim=0, keepdim=True)
 
-        if wav.size(0) > 1:
-            wav = wav.mean(dim=0, keepdim=True)
+    if sr != sampling_rate:
+        transform = torchaudio.transforms.Resample(orig_freq=sr,
+                                                   new_freq=sampling_rate)
+        wav = transform(wav)
+        sr = sampling_rate
 
-        if sr != sampling_rate:
-            transform = torchaudio.transforms.Resample(orig_freq=sr,
-                                                       new_freq=sampling_rate)
-            wav = transform(wav)
-            sr = sampling_rate
-
-        assert sr == sampling_rate
-        return wav.squeeze(0), sr
+    assert sr == sampling_rate
+    return wav.squeeze(0), sr
 
 
 def save_audio(path: str, tensor: torch.Tensor, sampling_rate: int = 16000):
@@ -36,16 +37,20 @@ def read_video(path: str):
 
 
 class VAD:
-    def __init__(self, model_id):
+    def __init__(self, model_id, wav_path):
         self.model_id = model_id
         self.model = VAD_MODELS[model_id]
 
-    def get_speech_timestamps(self, audio: torch.Tensor, model, sampling_rate: int = 16000,
-                              min_speech_duration_ms: int = 250, min_silence_duration_ms: int = 100,
+        self.wav_path = wav_path
+        self.wav_tensor, self.sample_rate = read_audio(wav_path)
+
+        self.speech_timestamps, self.acoustic_events_timestamps = self.get_speech_timestamps(self.model)
+
+    def get_speech_timestamps(self, model, min_speech_duration_ms: int = 250, min_silence_duration_ms: int = 100,
                               return_seconds: bool = False):
 
         """
-        This method is used for splitting long audios into speech chunks using silero VAD
+        This method is used for splitting long audios into speech chunks using a VAD or SAD system
 
         Parameters
         ----------
@@ -72,19 +77,22 @@ class VAD:
             list containing ends and beginnings of speech chunks (samples or seconds based on return_seconds)
         """
 
-        if not torch.is_tensor(audio):
-            try:
-                audio = torch.Tensor(audio)
-            except:
-                raise TypeError("Audio cannot be casted to tensor. Cast it manually")
-
-        if len(audio.shape) > 1:
-            for i in range(len(audio.shape)):  # trying to squeeze empty dimensions
-                audio = audio.squeeze(0)
-            if len(audio.shape) > 1:
-                raise ValueError("More than one dimension in audio. Are you trying to process audio with 2 channels?")
-
         if self.model_id == 'base':
+
+            audio, sampling_rate = self.wav_tensor, self.sample_rate
+
+            if not torch.is_tensor(audio):
+                try:
+                    audio = torch.Tensor(audio)
+                except:
+                    raise TypeError("Audio cannot be casted to tensor. Cast it manually")
+
+            if len(audio.shape) > 1:
+                for i in range(len(audio.shape)):  # trying to squeeze empty dimensions
+                    audio = audio.squeeze(0)
+                if len(audio.shape) > 1:
+                    raise ValueError("More than 1 dimension in audio. Are you trying to process audio with 2 channels?")
+
             threshold = 0.75  # Speech threshold: float (default - 0.5)
             window_size_samples = 1536  # int (default - 1536 samples) Audio chunks size.
             speech_pad_ms = 30  # int (default - 30 ms) Final speech chunks are padded by this value each side.
@@ -157,6 +165,7 @@ class VAD:
             for i, speech in enumerate(speeches):
                 if i == 0:
                     speech['start'] = int(max(0, speech['start'] - speech_pad_samples))
+
                 if i != len(speeches) - 1:
                     silence_duration = speeches[i + 1]['start'] - speech['end']
                     if silence_duration < 2 * speech_pad_samples:
@@ -165,7 +174,19 @@ class VAD:
                     else:
                         speech['end'] += int(speech_pad_samples)
                 else:
-                    speech['end'] = int(min(audio_length_samples, speech['end'] + speech_pad_samples))
+                    value = int(min(audio_length_samples, speech['end'] + speech_pad_samples))
+                    speech['end'] = value
+
+            acoustic_events = []
+            for i, speech in enumerate(speeches):
+                if i == 0 and speech['start'] == 0:
+                    continue
+                elif i == 0 and speech['start'] != 0:
+                    acoustic_events.append({'start': 0, 'end': speech['start']})
+                else:
+                    acoustic_events.append({'start': speeches[i-1]['end'], 'end': speech['start']})
+                    if i == len(speeches) - 1 and speech['end'] != audio_length_samples:
+                        acoustic_events.append({'start': speech['end'], 'end': audio_length_samples})
 
             if return_seconds:
                 for speech_dict in speeches:
@@ -176,7 +197,19 @@ class VAD:
                     speech_dict['start'] *= step
                     speech_dict['end'] *= step
 
-            return speeches
+            for ind, t in enumerate(speeches):
+                speeches[ind]['data'] = self.collect_chunks([speeches[ind]], self.wav_tensor)
+                acoustic_events[ind]['data'] = self.collect_chunks([acoustic_events[ind]], self.wav_tensor)
+
+            return speeches, acoustic_events
+
+        elif self.model_id == 'gtm-base':
+
+            try:
+                cmd = f'{self.model} {self.wav_path} ../data/output'
+                subprocess.run(cmd, check=True)
+            except:
+                raise TypeError("SAD model can't process this input. Please, check the paths!")
         else:
             raise TypeError("VAD model id isn't valid.")
 
@@ -187,35 +220,27 @@ class VAD:
             chunks.append(wav[i['start']: i['end']])
         return torch.cat(chunks)
 
-    def apply_2_wav(self, data_path: str, one_audio: bool = False):
+    def apply(self):
+        return self.speech_timestamps, self.acoustic_events_timestamps
 
-        files = [data_path + f for f in os.listdir(data_path) if '.wav' in f]
+    def save_speech_segments(self, output_path=''):
 
-        for f in files:
+        if output_path == '':
+            output_path = "/".join(self.wav_path.split('/')[:-1])
 
-            sampling_rate = 16000  # also accepts 8000
-            wav = read_audio(f, sampling_rate=sampling_rate)
-            speech_timestamps = self.get_speech_timestamps(wav, self.model, sampling_rate=sampling_rate)
+        name = self.wav_path.split('/')[-1]
 
-            output_path = data_path + 'vad/'
-            os.makedirs(output_path, exist_ok=True)
-            if one_audio:
-                # merge all speech chunks to one audio
-                output_path = re.sub(r'\.wav', '_vad.wav', re.sub(data_path, output_path, f))
-                save_audio(output_path, self.collect_chunks(speech_timestamps, wav), sampling_rate=sampling_rate)
-            else:
-                for ind, w in enumerate(speech_timestamps):
-                    tinit = round(w['start'] * 1000 / sampling_rate)
-                    tend = round(w['end'] * 1000 / sampling_rate)
-                    temp_f = re.sub(r'\.wav', f'-vad_{tinit}-{tend}.wav', re.sub(data_path, output_path, f))
-                    save_audio(temp_f, self.collect_chunks([speech_timestamps[ind]], wav), sampling_rate=sampling_rate)
+        output_path += '/vad/'
+        os.makedirs(output_path, exist_ok=True)
 
-    def apply_4_mem(self, wav: torch.Tensor, sampling_rate: int = 16000):
-        speech_timestamps = self.get_speech_timestamps(wav, self.model, sampling_rate=sampling_rate)
-        for ind, t in enumerate(speech_timestamps):
-            speech_timestamps[ind]['data'] = self.collect_chunks([speech_timestamps[ind]], wav)
-
-        return speech_timestamps
+        print("\nWriting Segments...")
+        for ind, w in enumerate(self.speech_timestamps):
+            tinit = round(w['start'] * 1000 / self.sample_rate)
+            tend = round(w['end'] * 1000 / self.sample_rate)
+            segment_name = output_path + f'{name}_vad_{tinit}-{tend}.wav'
+            save_audio(segment_name, w['data'], sampling_rate=self.sample_rate)
+            w['file_name'] = segment_name
+            print(f"\t{segment_name}")
 
 
 class RichTranscription:
@@ -224,26 +249,16 @@ class RichTranscription:
         self.name = arguments.name
         self.id = uuid.uuid4()
 
-
-
-        self.speech_timestamps = []
-        self.wav, self.sampling_rate = read_audio(arguments.data_path)
-
         self.stm = []
         self.srt = []
 
     def apply_vad(self):
-        vad = VAD(self.arguments.vad_model)
-        self.speech_timestamps = vad.apply_4_mem(self.wav, self.sampling_rate)
-        return self.speech_timestamps
+        vad = VAD(self.arguments.vad_model, self.arguments.data_path)
+        return vad.apply()
 
-    def save_speech_segments(self, output_path=''):
-        if output_path == '':
-            output_path = "/".join(self.arguments.data_path.split('/')[:-1])
+    def save_speech(self, output=''):
+        vad = VAD(self.arguments.vad_model, self.arguments.data_path)
+        speech, _ = vad.apply()
+        vad.save_speech_segments()
 
-        output_path += '/vad/'
-        os.makedirs(output_path, exist_ok=True)
-        for ind, w in enumerate(self.speech_timestamps):
-            tinit = round(w['start'] * 1000 / self.sampling_rate)
-            tend = round(w['end'] * 1000 / self.sampling_rate)
-            save_audio(output_path + f'{self.name}_vad_{tinit}-{tend}.wav', w['data'], sampling_rate=self.sampling_rate)
+
