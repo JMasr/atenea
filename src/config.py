@@ -49,4 +49,5 @@ def check_for_component(destination, file_drive_id):
 
 # pretrained model name: (model class, model tokenizer, output dimension, token style)
 VAD_MODELS = {'base': torch.hub.load(repo_or_dir="../models/basic_vad",
-                                     source='local', model='silero_vad', force_reload=True)}
+                                     source='local', model='silero_vad', force_reload=True),
+              'gtm-base': './pykaldi/sad/SAD.sh'}

@@ -36,6 +36,13 @@ def read_video(path: str):
     pass
 
 
+def transform_to_seconds(frames, sampling_rate):
+    for speech_dict in frames:
+        speech_dict['start'] = round(speech_dict['start'] / sampling_rate, 1)
+        speech_dict['end'] = round(speech_dict['end'] / sampling_rate, 1)
+    return frames
+
+
 class VAD:
     def __init__(self, model_id, wav_path):
         self.model_id = model_id
@@ -46,8 +53,7 @@ class VAD:
 
         self.speech_timestamps, self.acoustic_events_timestamps = self.get_speech_timestamps(self.model)
 
-    def get_speech_timestamps(self, model, min_speech_duration_ms: int = 250, min_silence_duration_ms: int = 100,
-                              return_seconds: bool = False):
+    def get_speech_timestamps(self):
 
         """
         This method is used for splitting long audios into speech chunks using a VAD or SAD system
@@ -78,8 +84,9 @@ class VAD:
         """
 
         if self.model_id == 'base':
-
             audio, sampling_rate = self.wav_tensor, self.sample_rate
+            min_speech_duration_ms = 250
+            min_silence_duration_ms= 100
 
             if not torch.is_tensor(audio):
                 try:
@@ -114,7 +121,7 @@ class VAD:
                     'Unusual window_size_samples! Supported window_size_samples:\n'
                     ' - [512, 1024, 1536] for 16000 sampling_rate\n - [256, 512, 768] for 8000 sampling_rate')
 
-            model.reset_states()
+            self.model.reset_states()
             min_speech_samples = sampling_rate * min_speech_duration_ms / 1000
             min_silence_samples = sampling_rate * min_silence_duration_ms / 1000
             speech_pad_samples = sampling_rate * speech_pad_ms / 1000
@@ -126,7 +133,7 @@ class VAD:
                 chunk = audio[current_start_sample: current_start_sample + window_size_samples]
                 if len(chunk) < window_size_samples:
                     chunk = torch.nn.functional.pad(chunk, (0, int(window_size_samples - len(chunk))))
-                speech_prob = model(chunk, sampling_rate).item()
+                speech_prob = self.model(chunk, sampling_rate).item()
                 speech_probs.append(speech_prob)
 
             triggered = False
@@ -188,11 +195,7 @@ class VAD:
                     if i == len(speeches) - 1 and speech['end'] != audio_length_samples:
                         acoustic_events.append({'start': speech['end'], 'end': audio_length_samples})
 
-            if return_seconds:
-                for speech_dict in speeches:
-                    speech_dict['start'] = round(speech_dict['start'] / sampling_rate, 1)
-                    speech_dict['end'] = round(speech_dict['end'] / sampling_rate, 1)
-            elif step > 1:
+            if step > 1:
                 for speech_dict in speeches:
                     speech_dict['start'] *= step
                     speech_dict['end'] *= step
@@ -204,12 +207,7 @@ class VAD:
             return speeches, acoustic_events
 
         elif self.model_id == 'gtm-base':
-
-            try:
-                cmd = f'{self.model} {self.wav_path} ../data/output'
-                subprocess.run(cmd, check=True)
-            except:
-                raise TypeError("SAD model can't process this input. Please, check the paths!")
+            sad = subprocess.call([self.model, self.wav_path, '../data/output', './pykaldi/sad'])
         else:
             raise TypeError("VAD model id isn't valid.")
 
