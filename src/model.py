@@ -99,15 +99,14 @@ def data_to_segment(data):
 
 def checks_and_warnings2(sampling_rate, wav_tensor, window_size_samples):
     if not torch.is_tensor(wav_tensor):
-        try:
-            wav_tensor = torch.Tensor(wav_tensor)
-        except:
-            raise TypeError("Audio cannot be casted to tensor. Cast it manually")
+        raise TypeError("Audio cannot be casted to tensor.")
+
     if len(wav_tensor.shape) > 1:
         for i in range(len(wav_tensor.shape)):  # trying to squeeze empty dimensions
             wav_tensor = wav_tensor.squeeze(0)
         if len(wav_tensor.shape) > 1:
             raise ValueError("More than 1 dimension in audio. Are you trying to process audio with 2 channels?")
+
     if sampling_rate > 16000 and (sampling_rate % 16000 == 0):
         step = sampling_rate // 16000
         sampling_rate = 16000
@@ -115,14 +114,17 @@ def checks_and_warnings2(sampling_rate, wav_tensor, window_size_samples):
         warnings.warn('Sampling rate is a multiply of 16000, casting to 16000 manually!')
     else:
         step = 1
+
     if sampling_rate == 8000 and window_size_samples > 768:
         warnings.warn(
             'window_size_samples is too big for 8000 sampling_rate! '
             'Better set window_size_samples to 256, 512 or 768 for 8000 sample rate!')
+
     if window_size_samples not in [256, 512, 768, 1024, 1536]:
         warnings.warn(
             'Unusual window_size_samples! Supported window_size_samples:\n'
             ' - [512, 1024, 1536] for 16000 sampling_rate\n - [256, 512, 768] for 8000 sampling_rate')
+
     return sampling_rate, step, wav_tensor
 
 

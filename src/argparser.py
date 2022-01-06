@@ -19,7 +19,7 @@ def parse_arguments():
 
     # Diarization Phase arguments (models, number of speakers, acoustic events of interest)
     parser.add_argument('--vad-model', default='base', type=str, help='select a VAD or SAD model')
-    parser.add_argument('--diarization-model', default='default', type=str, help='select the diarization model')
+    parser.add_argument('--diarization-model', default='base', type=str, help='select the diarization model')
     parser.add_argument('--number-spks', default=0, type=int, help='number of speakers, if it is unknown introduce 0')
     parser.add_argument('--acoustic-events', default='all', type=str, help='interesting acoustic events to detect')
 

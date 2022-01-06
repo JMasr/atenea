@@ -6,10 +6,10 @@ from pyannote.core import Timeline, Annotation, Segment
 from pyannote.core import notebook
 
 
-def make_annotation_from_segments(segments: Segment, label: str, annotation: Annotation=None):
+def make_annotation_from_segments(time_line: Timeline, label: str, annotation: Annotation = None):
     if not annotation:
         annotation = Annotation()
-    for s in segments:
+    for s in time_line:
         annotation[s] = label
     return annotation
 
@@ -127,34 +127,54 @@ class Audio(object):
                 1-D tensor with all the chunks in a specific segment of audio
         """
         chunks = []
-        for i in list_time_steps:
-            chunks.append(self.wav[i['start']: i['end']])
+        for chunk in list_time_steps:
+            chunks.append(self.wav_tensor[chunk['start']: chunk['end']])
         chunks = torch.cat(chunks)
         return chunks
 
-    def chunks_to_seconds(self, frames):
+    def chunks_to_seconds(self, segments):
         """
         This method converts the frames into its corresponding audio time in seconds.
 
         Parameters
         ----------
-        frames: list of dicts, [{'start'}: 0, {'end'}: 123]
+        segments: list of dicts, [{'start'}: 0, {'end'}: 16000]
                 list containing ends and beginnings of audio chunks (in samples)
 
         Returns
         ----------
-        chunks: torch.Tensor, one dimensional
-               1-D tensor with all the chunks in a specific segment of audio
+        segments: list of dicts, [{'start'}: 0, {'end'}: 1.0]
+                  list containing ends and beginnings of audio chunks (in seconds)
         """
 
-        for audio_dict in frames:
-            audio_dict['start'] = round(audio_dict['start'] / self.sampling_rate, 1)
-            audio_dict['end'] = round(audio_dict['end'] / self.sampling_rate, 1)
-        return frames
+        for audio_dict in segments:
+            audio_dict['start'] = round(audio_dict['start'] / self.sampling_rate, 4)
+            audio_dict['end'] = round(audio_dict['end'] / self.sampling_rate, 4)
+        return segments
+
+    def seconds_to_chunks(self, segments):
+        """
+        This method converts the frames into its corresponding audio time in seconds.
+
+        Parameters
+        ----------
+        segments: list of dicts, [{'start'}: 0, {'end'}: 1.0]
+                  list containing ends and beginnings of audio chunks (in seconds)
+
+        Returns
+        ----------
+        segments: list of dicts, [{'start'}: 0, {'end'}: 16000]
+                list containing ends and beginnings of audio chunks (in frames)
+        """
+        for audio_dict in segments:
+            audio_dict['start'] = round(audio_dict['start'] * self.sampling_rate, 4)
+            audio_dict['end'] = round(audio_dict['end'] * self.sampling_rate, 4)
+        return segments
 
 
 class Video(Audio):
-    def __init__(self, video_path):
+    def __init__(self, video_path: str):
+        super().__init__(video_path)
         self.path = video_path
 
 
