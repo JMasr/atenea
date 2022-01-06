@@ -1,9 +1,8 @@
-from model import RichTranscription
+from model import Pipeline
 from argparser import parse_arguments
 
 
 args = parse_arguments()
-rich_t = RichTranscription(args)
-print(rich_t.apply_vad())
-rich_t.save_speech()
-
+rich_t = Pipeline(args)
+rich_t.apply_vad()
+rich_t.audio.show_vad()
