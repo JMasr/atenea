@@ -26,7 +26,7 @@ while(<R>) {
   $wend = $end{$utt};
   $wlen = $wend - $wbegin;
   #printf RTTM "SPEAKER %s 1 %.2f %.2f <NA> <NA> %s <NA>\n", $reco, $wbegin, $wlen, $label;
-  printf RTTM "%d %d %s\n", ($wbegin)*100, ($wend)*100, $label;
+  printf RTTM "%d %d %s\n", ($wbegin)*1000, ($wend)*1000, $label;
  
 }
 
