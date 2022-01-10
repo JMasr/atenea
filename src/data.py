@@ -1,7 +1,9 @@
 import torch
 import torchaudio
+import pandas as pd
 import matplotlib.pyplot as plt
 
+from pympi.Elan import Eaf as Eaf_
 from pyannote.core import Timeline, Annotation, Segment
 from pyannote.core import notebook
 
@@ -82,20 +84,6 @@ class Audio(object):
         notebook.plot_timeline(self.acoustic_segments, time=True)
         plt.show()
 
-    def show_vad(self):
-        notebook.width = 10
-        plt.rcParams['figure.figsize'] = (notebook.width, 2)
-        notebook.crop = Segment(0, self.__len__())
-
-        # plot annotation
-        annotation = make_annotation_from_segments(self.speech_segments, 'Speaker')
-        annotation = make_annotation_from_segments(self.acoustic_segments, 'noise', annotation)
-        notebook.plot_annotation(annotation, legend=True, time=True)
-        plt.show()
-
-        with open("./vad.rttm", 'w') as f:
-            annotation.write_rttm(f)
-
     def read_as_tensor(self):
         wav, sr = torchaudio.load(self.path)
 
@@ -171,6 +159,28 @@ class Audio(object):
             audio_dict['end'] = round(audio_dict['end'] * self.sampling_rate, 4)
         return segments
 
+    def make_vad_annotation(self, output_path: str = None):
+        annotation = make_annotation_from_segments(self.speech_segments, 'Speaker')
+        annotation = make_annotation_from_segments(self.acoustic_segments, 'noise', annotation)
+
+        if not output_path:
+            output_path = f"{self.path[:-4]}_vad.rttm"
+
+        with open(output_path, 'w') as f:
+            annotation.write_rttm(f)
+
+        return annotation
+
+    def show_vad(self):
+        notebook.width = 10
+        plt.rcParams['figure.figsize'] = (notebook.width, 2)
+        notebook.crop = Segment(0, self.__len__())
+
+        # plot annotation
+        annotation = self.make_vad_annotation()
+        notebook.plot_annotation(annotation, legend=True, time=True)
+        plt.show()
+
 
 class Video(Audio):
     def __init__(self, video_path: str):
@@ -182,8 +192,63 @@ class RichTranscription(object):
     def __init__(self, multimedia_path: str):
         self.multimedia_path = multimedia_path
 
-        self.spk = {}
-        self.acu = []
-        self.txt = []
-        self.stm = []
-        self.srt = []
+        self.spk = None
+        self.acu = None
+        self.txt = None
+        self.stm = None
+        self.srt = None
+        self.eaf = None
+
+
+class Eaf(object):
+    def __init__(self, path):
+        self.path = path
+        self.eaf = Eaf_(path)
+
+    @staticmethod
+    def make_data_frame_from_tier(data_tier: list, df_in: pd.DataFrame = pd.DataFrame(), column: int = 2,
+                                  fill_none_with: str = None):
+        df_out = df_in.copy()
+        for i in data_tier:
+            time_start = int(i[0])
+            time_final = int(i[1])
+            value = i[2]
+
+            if df_in.empty:
+                entry = pd.Series([time_start, time_final, None, None, None, None, None, None])
+                entry[column] = value
+                df_out = df_out.append(entry, ignore_index=True)
+            else:
+                index = df_out.loc[(df_out['Time_Init'] == time_start) | (df_out['Time_End'] == time_final)].index
+                if index.empty:
+                    mach_tolerance = 350
+                    mach = df_out.loc[(round(df_out['Time_Init']/mach_tolerance) == round(time_start/mach_tolerance)) |
+                                      (round(df_out['Time_End']/mach_tolerance) == round(time_final/mach_tolerance))]
+                df_out.iloc[mach.index, column] = value
+
+        if fill_none_with:
+            df_out.iloc[:, column] = df_out.iloc[:, column].fillna(fill_none_with)
+
+        df_out.columns = ["Time_Init", "Time_End", "Text", "Text_Orto", "Speaker", "Language", "Topic", "Acoustic_Info"]
+        return df_out
+
+    def to_csv(self, path_csv: str = None):
+
+        data = {}
+        tiers_name = self.eaf.get_tier_names()
+        for t in tiers_name:
+            data[t] = self.eaf.get_annotation_data_for_tier(t)
+
+        df_speech = self.make_data_frame_from_tier(data['Segmento'])
+        df_speech = self.make_data_frame_from_tier(data["Speakers"], df_speech, column=4, fill_none_with="UNK")
+        df_speech = self.make_data_frame_from_tier(data["Lingua"], df_speech, column=5, fill_none_with="galego")
+        df_speech = self.make_data_frame_from_tier(data["Topics"], df_speech, column=6)
+
+        df_acoustic_events = self.make_data_frame_from_tier(data["outros"], column=7)
+
+        if not path_csv:
+            path_csv = self.path.replace(".eaf", ".csv")
+        df_speech.to_csv(path_csv)
+        df_acoustic_events.to_csv(path_csv.replace(".csv", "_acoustic.csv"))
+
+        return df_speech, df_acoustic_events
