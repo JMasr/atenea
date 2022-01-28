@@ -8,14 +8,6 @@ from pyannote.core import Timeline, Annotation, Segment
 from pyannote.core import notebook
 
 
-def make_annotation_from_segments(time_line: Timeline, label: str, annotation: Annotation = None):
-    if not annotation:
-        annotation = Annotation()
-    for s in time_line:
-        annotation[s] = label
-    return annotation
-
-
 class Audio(object):
     """
     path:   str
@@ -160,8 +152,17 @@ class Audio(object):
         return segments
 
     def make_vad_annotation(self, output_path: str = None):
-        annotation = make_annotation_from_segments(self.speech_segments, 'Speaker')
-        annotation = make_annotation_from_segments(self.acoustic_segments, 'noise', annotation)
+
+        def make_annotation_from_segments(time_line: Timeline, label: str, input_annotation: Annotation = None):
+            if not input_annotation:
+                input_annotation = Annotation()
+
+            for s in time_line:
+                input_annotation[s] = label
+            return input_annotation
+
+        annotation = make_annotation_from_segments(self.speech_segments, 'SPEAKER')
+        annotation = make_annotation_from_segments(self.acoustic_segments, 'NON-SPEECH', annotation)
 
         if not output_path:
             output_path = f"{self.path[:-4]}_vad.rttm"

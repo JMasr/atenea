@@ -334,7 +334,7 @@ class Pipeline:
         self.audio = Audio(self.arguments.data_path)
         self.trans = RichTranscription(self.arguments.data_path)
         self.vad = VAD(self.arguments.vad_model)
-        self.diaz = Diarization(self.arguments.diarization_model)
+        self.diariz = Diarization(self.arguments.diarization_model)
 
     def apply_vad(self):
         speech_segments, acoustic_segments = self.vad.apply(self.audio)
@@ -344,3 +344,4 @@ class Pipeline:
 
     def apply_diarization(self):
         pass
+
