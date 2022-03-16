@@ -8,4 +8,3 @@ if __name__ == '__main__':
     rich_t.apply_asr()
     rich_t.apply_acpr()
     rich_t.make_srt()
-    print("Done!!")
