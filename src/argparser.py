@@ -8,18 +8,23 @@ def parse_arguments():
     parser.add_argument('--multimodal', default=False, type=bool, help='the data is a multimedia file')
     parser.add_argument('--cuda', default=0, type=int, help='use a cuda specific device or pass -1 to use cpu instead')
     parser.add_argument('--seed', default=1, type=int, help='random seed')
-    parser.add_argument('--data-path', default='../data/gl_test.wav', type=str, help='path to train/dev/test datasets')
+    parser.add_argument('--data-path', default='/home/jsanhcez/Documentos/Proyectos/Atenea/atenea/data/TelexornalXelaArias.wav',
+                        type=str, help='path to train/dev/test datasets')
     parser.add_argument('--save-path', default='/log/', type=str, help='model and log save directory')
     parser.add_argument('--pipe-line', default='default', type=str, help='pipe-line selected for the run')
 
     # Language Recognition Phase arguments (language, models, multilingual)
-    parser.add_argument('--language', default='unk', type=str, help='language, available options are: gl, es, en, unk')
+    parser.add_argument('--language', default='gl', type=str, help='language, available options are: gl, es, en, unk')
     parser.add_argument('--language-model', default='default', type=str, help='select the language recognition model')
     parser.add_argument('--multilingual', default=False, type=bool, help='there is more than one language present')
 
     # Diarization Phase arguments (models, number of speakers, acoustic events of interest)
+
+    parser.add_argument('--alr-model', default='gtm', type=str, help='select a VAD or SAD model')
     parser.add_argument('--vad-model', default='base', type=str, help='select a VAD or SAD model')
-    parser.add_argument('--diarization-model', default='base', type=str, help='select the diarization model')
+    parser.add_argument('--diarization-model', default='gtm', type=str, help='select the diarization model')
+    parser.add_argument('--drz-thresholds', default='', type=str, help='set the diarization thresholds')
+    parser.add_argument('--asr-model', default='gtm', type=str, help='select the asr model')
     parser.add_argument('--number-spks', default=0, type=int, help='number of speakers, if it is unknown introduce 0')
     parser.add_argument('--acoustic-events', default='all', type=str, help='interesting acoustic events to detect')
 
