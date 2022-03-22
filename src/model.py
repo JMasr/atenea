@@ -1,3 +1,4 @@
+import os
 import uuid
 import shutil
 import pickle
@@ -350,12 +351,12 @@ class Diarization(Model):
     def run_model_gtm(self, multimedia):
         if self.drz_thresholds:
             th1_1st, th2_1st = self.drz_thresholds[0], self.drz_thresholds[1]
-            th1_2st, th2_2st = self.drz_thresholds[2], self.drz_thresholds[3]
+            window, period = self.drz_thresholds[2], self.drz_thresholds[3]
         else:
-            th1_1st, th2_1st, th1_2st, th2_2st = '13.5', '14.5', '13.5', '14.5'
+            th1_1st, th2_1st, window, period = '13.5', '14.5', '5.', '.5'
 
         path_out = multimedia.get_path().replace('.wav', '_drz_output')
-        subprocess.call([self.model, multimedia.get_path(), path_out, th1_1st, th2_1st, th1_2st, th2_2st])
+        subprocess.call([self.model, multimedia.get_path(), path_out, th1_1st, th2_1st, window, period])
 
         path_results = f"{path_out}/{multimedia.get_name().replace('.wav', '_drz.rttm')}"
         with open(path_results, 'r', encoding="ISO-8859-1") as f:
@@ -629,7 +630,9 @@ class Pipeline:
 
     def apply_asr(self):
         print('ASR')
-        self.trans = self.asr.apply(self.multimedia)
+        asr_trans = self.asr.apply(self.multimedia)
+        self.trans = asr_trans
+        return asr_trans
 
     def apply_acpr(self):
         new_transcription, acpr_confidences = self.acpr.apply(self.trans.get_text().split())
@@ -640,11 +643,51 @@ class Pipeline:
         subtitle = Subtitle(self.trans.get_annotation())
         subtitle.write_srt(self.multimedia.path)
 
-    def apply_drz_and_asr(self):
-        process_1 = multiprocessing.Process(name='diar', target=self.apply_diarization)
-        process_2 = multiprocessing.Process(name='asr', target=self.apply_asr)
-        process_1.start()
-        process_2.start()
-        while process_1.is_alive() or process_2.is_alive():
+    def run_models(self):
+
+        def delete_dir(dir_path):
+            if os.path.exists(dir_path):
+                os.remove(dir_path)
+            else:
+                print("The file does not exist")
+
+        def read_drz_results(multimedia):
+            path_out = multimedia.get_path().replace('.wav', '_drz_output')
+            path_results = f"{path_out}/{multimedia.get_name().replace('.wav', '_drz.rttm')}"
+            with open(path_results, 'r', encoding="ISO-8859-1") as f:
+                spk_annotations = f.readlines()
+
+            diarization_annotations = Annotation()
+            for annotation in spk_annotations:
+                annotation = annotation.split()
+                time_init = float(annotation[3])
+                time_ends = time_init + float(annotation[4])
+                spk_id = annotation[7]
+
+                s = Segment(time_init, time_ends)
+                diarization_annotations[s] = spk_id
+            # delete_dir(path_out)
+
+            return diarization_annotations
+
+        def read_asr_results(multimedia):
+            path_out = multimedia.get_path().replace('.wav', '_output')
+            multimedia_ctm = f"{path_out}/{multimedia.get_name().replace('.wav', '.ctm')}"
+            # delete_dir(path_out)
+
+            return Transcription(multimedia_ctm)
+
+        process_drz = multiprocessing.Process(name='drz', target=self.apply_diarization)
+        process_asr = multiprocessing.Process(name='asr', target=self.apply_asr)
+        process_drz.start()
+        process_asr.start()
+
+        while process_asr.is_alive():
             pass
+        self.trans = read_asr_results(self.multimedia)
+        self.apply_acpr()
+
+        while process_drz.is_alive():
+            pass
+        self.multimedia.annotations = read_drz_results(self.multimedia)
 

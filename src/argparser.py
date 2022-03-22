@@ -23,7 +23,8 @@ def parse_arguments():
     parser.add_argument('--alr-model', default='gtm', type=str, help='select a VAD or SAD model')
     parser.add_argument('--vad-model', default='base', type=str, help='select a VAD or SAD model')
     parser.add_argument('--diarization-model', default='gtm', type=str, help='select the diarization model')
-    parser.add_argument('--drz-thresholds', default='', type=str, help='set the diarization thresholds')
+    parser.add_argument('--drz-thresholds', default='13.5;14.5;5.;.5', type=str,
+                        help='Set the diarization thresholds. (Use ; as the separator char)')
     parser.add_argument('--asr-model', default='gtm', type=str, help='select the asr model')
     parser.add_argument('--number-spks', default=0, type=int, help='number of speakers, if it is unknown introduce 0')
     parser.add_argument('--acoustic-events', default='all', type=str, help='interesting acoustic events to detect')

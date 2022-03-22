@@ -440,6 +440,7 @@ class Subtitle(object):
             return lines
 
         def split_2nd_build_lines(annotation, lines: dict):
+            act_spk = annotation[lines[1][0]][4]
             ind, subtitles = 1, []
             while ind <= len(lines):
                 words, asr_conf, punct_conf, spk_id = [], [], [], ''
@@ -447,11 +448,17 @@ class Subtitle(object):
                 dur_last_word = annotation[lines[ind][-1]][0]
                 end_time_line = lines[ind][-1] + dur_last_word
 
-                for value in lines[ind]:
-                    words.append(annotation[value][1])
+                for position, value in enumerate(lines[ind]):
+
                     asr_conf.append(annotation[value][2])
                     punct_conf.append(annotation[value][3])
                     spk_id = annotation[value][4]
+
+                    word = annotation[value][1]
+                    if position == 0 and spk_id != act_spk:
+                        word = word[0].upper() + word[1:]
+                        act_spk = spk_id
+                    words.append(word)
 
                 subtitles.append([start_time_line, end_time_line, words, asr_conf, punct_conf, spk_id])
                 ind += 1
@@ -550,17 +557,6 @@ class Subtitle(object):
             for line in self.subtitle:
                 print(("\n%d\n%s --> %s\n%s\n" % (line[0], line[1], line[2], line[3])))
                 f.write("\n%d\n%s --> %s\n%s\n" % (line[0], line[1], line[2], line[3]))
-
-
-class RichTranscription(Transcription):
-    def __init__(self, multimedia_ctm: list):
-        super().__init__(multimedia_ctm)
-        self.spk = None
-        self.acu = None
-        self.txt = None
-        self.stm = None
-        self.srt = None
-        self.eaf = None
 
 
 class Eaf(object):
