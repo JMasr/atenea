@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./procesaFichero.sh ./TelexornalXelaArias.wav ./results 13.5 14.5 13.5 14.5 
+

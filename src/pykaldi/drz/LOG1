@@ -1,0 +1,826 @@
+Feature extraction...
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+process-kaldi-pitch-feats ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm
+./local/extract_ivectors_vad.sh: combining iVectors across jobs
+./local/extract_ivectors_vad.sh: computing mean of iVectors for each speaker and length-normalizing
+logistic-regression-eval ./modelos_SAD/logistic_regression_rebalanced_5classes 'ark:ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- |' ark,t:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/class_posteriors 
+ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- 
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:90) Processed 80 iVectors.
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 1, standard deviation was 6.68607e-05
+LOG (logistic-regression-eval[5.5.1000-df1e9]:ComputeLogPosteriors():logistic-regression-eval.cc:53) Calculated log posteriors for 80 vectors.
+Feature extraction...
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+process-kaldi-pitch-feats ark:- ark:- 
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm
+./local/extract_ivectors_vad.sh: combining iVectors across jobs
+./local/extract_ivectors_vad.sh: computing mean of iVectors for each speaker and length-normalizing
+logistic-regression-eval ./modelos_SAD/logistic_regression_rebalanced_5classes 'ark:ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- |' ark,t:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/class_posteriors 
+ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- 
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:90) Processed 80 iVectors.
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 1, standard deviation was 6.68607e-05
+LOG (logistic-regression-eval[5.5.1000-df1e9]:ComputeLogPosteriors():logistic-regression-eval.cc:53) Calculated log posteriors for 80 vectors.
+Feature extraction...
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+process-kaldi-pitch-feats ark:- ark:- 
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm
+./local/extract_ivectors_vad.sh: combining iVectors across jobs
+./local/extract_ivectors_vad.sh: computing mean of iVectors for each speaker and length-normalizing
+logistic-regression-eval ./modelos_SAD/logistic_regression_rebalanced_5classes 'ark:ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- |' ark,t:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/class_posteriors 
+ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- 
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:90) Processed 80 iVectors.
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 1, standard deviation was 6.68607e-05
+LOG (logistic-regression-eval[5.5.1000-df1e9]:ComputeLogPosteriors():logistic-regression-eval.cc:53) Calculated log posteriors for 80 vectors.
+Feature extraction...
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+process-kaldi-pitch-feats ark:- ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm
+./local/extract_ivectors_vad.sh: combining iVectors across jobs
+./local/extract_ivectors_vad.sh: computing mean of iVectors for each speaker and length-normalizing
+logistic-regression-eval ./modelos_SAD/logistic_regression_rebalanced_5classes 'ark:ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- |' ark,t:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/class_posteriors 
+ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- 
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:90) Processed 80 iVectors.
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 1, standard deviation was 6.68607e-05
+LOG (logistic-regression-eval[5.5.1000-df1e9]:ComputeLogPosteriors():logistic-regression-eval.cc:53) Calculated log posteriors for 80 vectors.
+Feature extraction...
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+process-kaldi-pitch-feats ark:- ark:- 
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm
+./local/extract_ivectors_vad.sh: combining iVectors across jobs
+./local/extract_ivectors_vad.sh: computing mean of iVectors for each speaker and length-normalizing
+logistic-regression-eval ./modelos_SAD/logistic_regression_rebalanced_5classes 'ark:ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- |' ark,t:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/class_posteriors 
+ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- 
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:90) Processed 80 iVectors.
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 1, standard deviation was 6.68607e-05
+LOG (logistic-regression-eval[5.5.1000-df1e9]:ComputeLogPosteriors():logistic-regression-eval.cc:53) Calculated log posteriors for 80 vectors.
+Feature extraction...
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+process-kaldi-pitch-feats ark:- ark:- 
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm
+./local/extract_ivectors_vad.sh: combining iVectors across jobs
+./local/extract_ivectors_vad.sh: computing mean of iVectors for each speaker and length-normalizing
+logistic-regression-eval ./modelos_SAD/logistic_regression_rebalanced_5classes 'ark:ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- |' ark,t:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/class_posteriors 
+ivector-normalize-length scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ivectors_plp_pitch.scp ark:- 
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:90) Processed 80 iVectors.
+LOG (ivector-normalize-length[5.5.1000-df1e9]:main():ivector-normalize-length.cc:94) Average ratio of iVector to expected length was 1, standard deviation was 6.68607e-05
+LOG (logistic-regression-eval[5.5.1000-df1e9]:ComputeLogPosteriors():logistic-regression-eval.cc:53) Calculated log posteriors for 80 vectors.
+Feature extraction...
+paste-feats --length-tolerance=2 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- |' 'ark:extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp  ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- | compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- | process-kaldi-pitch-feats ark:- ark:- |' ark:- 
+copy-feats --compress=true ark:- ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+compute-plp-feats --verbose=2 --config=conf/plp.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00001
+process-kaldi-pitch-feats ark:- ark:- 
+extract-segments scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/featureExtraction.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/segments ark:- 
+compute-kaldi-pitch-feats --verbose=2 --config=conf/pitch.conf ark:- ark:- 
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00002
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00003
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00004
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00005
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00006
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00007
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00008
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00009
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 10 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00010
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00011
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00012
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00013
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00014
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00015
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00016
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00017
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00018
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00019
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 20 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00020
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00021
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00022
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00023
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00024
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00025
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00026
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00027
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00028
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00029
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 30 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00030
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00031
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00032
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00033
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00034
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00035
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00036
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00037
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00038
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00039
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 40 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00040
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00041
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00042
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00043
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00044
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00045
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00046
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00047
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00048
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00049
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00050
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00051
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00052
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00053
+VLOG[2] (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:107) Processed 50 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00054
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00055
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00056
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00057
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00058
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00059
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 60 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00060
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00061
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00062
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00063
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00064
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00065
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00066
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00067
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00068
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00069
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 70 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00070
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00071
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00072
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00073
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00074
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00075
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00076
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00077
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00078
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00079
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (extract-segments[5.5.1000-df1e9]:main():extract-segments.cc:194) Successfully processed 80 lines out of 80 in the segments file. 
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:181) Processed 80 utterances
+VLOG[2] (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:182) Processed features for key TelexornalXelaArias_00080
+LOG (compute-plp-feats[5.5.1000-df1e9]:main():compute-plp-feats.cc:185)  Done 80 out of 80 utterances.
+LOG (compute-kaldi-pitch-feats[5.5.1000-df1e9]:main():compute-kaldi-pitch-feats.cc:110) Done 80 utterances, 0 with errors.
+LOG (process-kaldi-pitch-feats[5.5.1000-df1e9]:main():process-kaldi-pitch-feats.cc:85) Post-processed pitch for 80 utterances.
+LOG (paste-feats[5.5.1000-df1e9]:main():paste-feats.cc:158) Done 80 utts, errors on 0
+LOG (copy-feats[5.5.1000-df1e9]:main():copy-feats.cc:143) Copied 80 feature matrices.
+compute-vad --config=conf/vad1.conf scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ark,scp:./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.ark,./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp 
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 80 utterances successfully; 0 had empty features, and 0 were completely unvoiced.
+LOG (compute-vad[5.5.1000-df1e9]:main():compute-vad.cc:99) Proportion of voiced frames was 0.946038 over 98736 frames.
+./local/extract_ivectors_vad.sh --cmd run.pl --nj 1 ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/plp_pitch.scp ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/vad.scp ./modelos_SAD/UBM512_plp_pitch full ./modelos_SAD/IVextractor_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp/ ivectors_plp_pitch
+mkdir -p ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//split1/1
+./local/extract_ivectors_vad.sh: extracting iVectors
+fgmm-global-to-gmm ./modelos_SAD/UBM512_plp_pitch ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm 
+LOG (fgmm-global-to-gmm[5.5.1000-df1e9]:main():fgmm-global-to-gmm.cc:58) Written diagonal GMM to ./results/ClusterSlWinSADSegm/resultsClustering_CW/TelexornalXelaArias/subseg_w5s0.5ms1.5_segm/tmp//final.dubm

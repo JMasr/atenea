@@ -143,4 +143,4 @@ awk 'NF > 5 {print}' ${decode_dir}/score_${lmwt}/wip0.0/data.utt.ctm | awk '{pri
 #php local/generaEAF.php $tmp_dir/data/rec_segments/segments2 ${decode_dir}/score_${lmwt}/wip0.0/data.utt.ctm $tmp_dir/${file_name}
 
 mv $tmp_dir/${file_name}.ctm $outdir/
-rm -rf ${outdir}/tmp/
+# rm -rf ${outdir}/tmp/
